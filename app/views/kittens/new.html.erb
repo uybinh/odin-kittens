@@ -1,2 +1,5 @@
-<h1>Kittens#new</h1>
-<p>Find me in app/views/kittens/new.html.erb</p>
+<% provide(:btn_title, "Adopt this kitten!") %>
+
+<h1>Adopt new kitten</h1>
+
+<%= render "shared/kitten-form" %>

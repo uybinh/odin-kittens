@@ -1,2 +1,13 @@
-<h1>Kittens#index</h1>
-<p>Find me in app/views/kittens/index.html.erb</p>
+<h1>All our cute kittens!</h1>
+
+<p><%= link_to "Adopt new kitten", new_kitten_path %></p>
+<% @kittens.each do |kitten| %>
+  <h2><%= kitten.name %></h2>
+  <p><%= kitten.cuteness %></p>
+  <p><%= kitten.softness %></p>
+  <p><span><%= link_to "Detail", kitten_path(kitten) %></span> |
+  <span><%= link_to "Change", edit_kitten_path(kitten) %></span> |
+  <span><%= link_to "Give away", kitten_path(kitten),
+                                method: :delete,
+                                data: { confirm: "You sure?"} %></span></p>
+<% end %>

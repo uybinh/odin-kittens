@@ -1,2 +1,5 @@
-<h1>Kittens#edit</h1>
-<p>Find me in app/views/kittens/edit.html.erb</p>
+<% provide(:btn_title, "Change info!") %>
+
+<h1>Change <%= @kitten.name %> info</h1>
+
+<%= render "shared/kitten-form" %>
